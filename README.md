@@ -49,7 +49,7 @@ Les mises à jour s'effectuerons également via cette fenêtre. Vous pouvez main
 
 Une fois redémarré vous pouvez accéder à l'atelier de cette façon :
 
-![launch](/ressources/launch.png?raw=true)
+<img src="https://github.com/AdrienHerman/Lattybrides/blob/main/ressources/launch.png" width="350">
 
 _____________________________________________________________________________
 
