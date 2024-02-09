@@ -3,6 +3,8 @@
 # Lattybrides
 Création de structures Lattices Hybrides à Gradients de réseau. Projet réalisé dans le cadre du projet de fin d'étude PLP23INT16 à l'INSA Hauts-de-France.
 
+![structure](/icons/struct.png?raw=true)
+
 ## Dépendances
 Les modules python nécessaires au bon fonctionnement du code de génération des structures sont les suivants :
 ```
