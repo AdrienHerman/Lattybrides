@@ -18,10 +18,12 @@ L'installation de l'atelier peut se faire manuellement en copiant le code python
 ### Installation via le gestionnaire des extensions de FreeCAD
 L'atelier n'étant pas répertorié dans les dépôts de FreeCAD, il vous faudra l'ajouter manuellement.
 Pour ce faire, ouvrez la fenêtre de "Préférences" de FreeCAD (Menu Édition -> Préférences) :
+
 ![menu preferences](/ressources/settings.png?raw=true)
 
 Ouvrez ensuite l'onglet "Gestionnaire des extensions" et cliquez sur le bouton "+" :
-![fenetre preference](/ressources/settingsw.png?raw=true)
+
+![preference](/ressources/settingsw.png?raw=true)
 
 Un fenêtre s'ouvre :
 
@@ -30,14 +32,13 @@ Un fenêtre s'ouvre :
 Il vous suffit ensuite de copier coller les informations suivantes :
 ```
 URL du dépôt : https://github.com/AdrienHerman/Lattybrides
-```
-```
 Branche : main
 ```
 Cliquez sur "OK" et une nouvelle fois sur "OK" dans la fenêtre des préférences de FreeCAD.
 
 Allez ensuite dans le menu "Outils" et cliquez sur "Gestionnaire des extensions":
-![addon menu](/ressources/addonm.png?raw=true)
+
+![addonmenu](/ressources/addonm.png?raw=true)
 
 _____________________________________________________________________________
 
