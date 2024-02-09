@@ -23,11 +23,11 @@ Pour ce faire, ouvrez la fenêtre de "Préférences" de FreeCAD (Menu Édition -
 
 Ouvrez ensuite l'onglet "Gestionnaire des extensions" et cliquez sur le bouton "+" :
 
-![preference](/ressources/settingsw.png?raw=true)
+<img src="https://github.com/AdrienHerman/Lattybrides/blob/main/ressources/settingsw.png" width="350">
 
 Un fenêtre s'ouvre :
 
-![fenetre repo](/ressources/repo.png?raw=true)
+<img src="https://github.com/AdrienHerman/Lattybrides/blob/main/ressources/repo.png" width="350">
 
 Il vous suffit ensuite de copier coller les informations suivantes :
 ```
@@ -38,12 +38,12 @@ Cliquez sur "OK" et une nouvelle fois sur "OK" dans la fenêtre des préférence
 
 Allez ensuite dans le menu "Outils" et cliquez sur "Gestionnaire des extensions":
 
-![addonmenu](/ressources/addonsm.png?raw=true)
+<img src="https://github.com/AdrienHerman/Lattybrides/blob/main/ressources/addonsm.png" width="350">
 
 Une fenêtre s'ouvre. Recherchez "Lattybrides" de l'atelier s'affichera dans la liste. Il ne vous reste plus qu'à le sélectionner et à cliquer sur le bouton "Installer" :
 
-![addonwindow](/ressources/addonswm.png?raw=true)
-![addoninstall](/ressources/installm.png?raw=true)
+<img src="https://github.com/AdrienHerman/Lattybrides/blob/main/ressources/addonswm.png" width="350">
+<img src="https://github.com/AdrienHerman/Lattybrides/blob/main/ressources/installm.png" width="350">
 
 Les mises à jour s'effectuerons également via cette fenêtre. Vous pouvez maintenant fermer cette fenêtre. FreeCAD vous demandera de redémarrer l'application afin de recharger tous les ateliers fraîchements installés.
 
