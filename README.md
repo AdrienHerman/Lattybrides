@@ -6,6 +6,7 @@ Création de structures Lattices Hybrides à Gradients de réseau. Projet réali
 ## Dépendances
 Les modules python nécessaires au bon fonctionnement du code de génération des structures sont les suivants :
 ```
+ - time
  - datetime
  - matplotlib
  - PySide
