@@ -52,3 +52,27 @@ Une fois redémarré vous pouvez accéder à l'atelier de cette façon :
 <img src="https://github.com/AdrienHerman/Lattybrides/blob/main/ressources/launch.png" width="350">
 
 ## Utilisation
+
+Après avoir démarré FreeCAD, l'atelier est censé être chargé en mémoire. Pour afficher l'atelier, il vous suffit de le sélectionner dans la liste des ateliers :
+
+<img src="https://github.com/AdrienHerman/Lattybrides/blob/main/ressources/launch.png" width="350">
+
+Une fois l'atelier chargé, les icônes suivantes sont affichées :
+
+<img src="https://github.com/AdrienHerman/Lattybrides/blob/main/ressources/icons.png" width="350">
+
+Dans ce qui suit, l'icône de gauche est l'icône numéro 1 et l'icône de droite est l'icône numéro 5.
+
+- L'icône numéro 1 sert à lancer le calcul de la strcuture. Le calcul peut-être long (surtout si l'optimisation de la masse est enclanchée) et ne peut pas être arrêté à moins de fermer le programme via le gestionnaire des tâches. Attention, le calcul ne prendra en compte les options du fichier config.py présent dans les fichiers d'installation de l'atelier. Si vous ne sauvegardez pas les modifications effectuées à ce fichier, la configuration ne sera pas appliquée. À la fin du calcul, si l'exportation du fichier 3D STL est activée, une fenêtre de sauvegarde s'ouvrira afin d'enregistrer la structure à l'endroit souhaité par l'utilisateur. Même chose pour la sauvegarde du fichier FreeCAD. Une fois les fichiers sauvegardés, si l'optimisation de la masse est activée, un graphique s'affichera montrant la masse pour chaque itération du calcul.
+
+- L'icône numéro 2 sert à ouvrir le fichier de configuration config.py dans l'éditeur de texte de FreeCAD. Vous pouvez sauvegarder les changements effectués à ce fichier de configuration avec le raccourcis Ctrl+S ou via la disquette ou le menu Fichier -> Enregistrer de FreeCAD.
+
+- L'icône numéro 3 permet de rétablir la configuration par défaut du fichier de configuration. Cette fonctionnalité permet de revenir totalement en arrière au cas où une variable serait mal orthographiée ou manquante par exemple.
+
+- L'icône numéro 4 permet d'ouvrir un fichier de configuration sauvegardé à un endroit extérieur aux fichiers du logiciel.
+
+- L'icône numéro 5 permet d'effectuer une copie du fichier de configuration config.py à un endroit souhaité par l'utilisateur.
+
+Les icônes 4 et 5 peuvent se révèler très utiles pour sauvegarder les fichiers de configuration pour chaque structure. Ceci permet de les générer une nouvelle fois même si le modèle 3D de la structure a été perdu ou corrompu.
+
+Le détail des variables du fichier de configuration est explicité dans le document "help.pdf" présent sur le GitHub.
