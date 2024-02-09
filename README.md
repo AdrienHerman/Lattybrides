@@ -13,7 +13,7 @@ Les modules python nécessaires au bon fonctionnement du code de génération de
 **_ATTENTION : L'atelier n'a été testé qu'à partir de la version 0.19 et jusqu'à la version 0.21.2, d'autres versions de FreeCAD sont suceptibles de faire disfonctionner l'atelier !_**
 
 ## Installation
-L'installation de l'atelier peut se faire manuellement en copiant le code python dans le dossier Mod de FreeCAD (voir ici : [installation manuelle](https://wiki.freecad.org/Installing_more_workbenches/fr)) ou en utilisant le gestionnaire des extensions (voir ici : [installation via freecad](https://wiki.freecad.org/Std_AddonMgr/fr)).
+L'installation de l'atelier peut se faire manuellement en copiant le code python dans le dossier Mod de FreeCAD (voir ici : [Installation Manuelle](https://wiki.freecad.org/Installing_more_workbenches/fr)) ou en utilisant le gestionnaire des extensions (voir ici : [Installation via FreeCAD](https://wiki.freecad.org/Std_AddonMgr/fr)).
 
 ### Installation via le gestionnaire des extensions de FreeCAD
 L'atelier n'étant pas répertorié dans les dépôts de FreeCAD, il vous faudra l'ajouter manuellement.
@@ -21,10 +21,12 @@ Pour ce faire, ouvrez la fenêtre de "Préférences" de FreeCAD (Menu Édition -
 ![menu preferences](/ressources/settings.png?raw=true)
 
 Ouvrez ensuite l'onglet "Gestionnaire des extensions" et cliquez sur le bouton "+" :
-![fenetre preference](/ressources/settings_window.png?raw=true)
+![fenetre preference](/ressources/settingsw.png?raw=true)
 
 Un fenêtre s'ouvre :
+
 ![fenetre repo](/ressources/repo.png?raw=true)
+
 Il vous suffit ensuite de copier coller les informations suivantes :
 ```
 URL du dépôt : https://github.com/AdrienHerman/Lattybrides
@@ -35,7 +37,7 @@ Branche : main
 Cliquez sur "OK" et une nouvelle fois sur "OK" dans la fenêtre des préférences de FreeCAD.
 
 Allez ensuite dans le menu "Outils" et cliquez sur "Gestionnaire des extensions":
-![addon menu](/ressources/addon_menu.png?raw=true)
+![addon menu](/ressources/addonm.png?raw=true)
 
 _____________________________________________________________________________
 
