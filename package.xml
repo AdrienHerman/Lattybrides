@@ -7,8 +7,8 @@
 	<maintainer email="herman1.adrien@gmail.com">Adrien Herman</maintainer>
 	<licence>CC0-1.0</licence>
 	<icon>icons/softicon.png</icon>
-	<url branch="last_stable" type="repository">https://github.com/AdrienHerman/Lattybrides/tree/last_stable</url>
-	<url type="readme">https://github.com/AdrienHerman/Lattybrides/tree/last_stable/README.md</url>
+	<url type="repository branch="main"">https://github.com/AdrienHerman/Lattybrides</url>
+	<url type="readme">https://github.com/AdrienHerman/Lattybrides/tree/main/README.md</url>
 
 	<content>
 		<workbench>
