@@ -38,7 +38,18 @@ Cliquez sur "OK" et une nouvelle fois sur "OK" dans la fenêtre des préférence
 
 Allez ensuite dans le menu "Outils" et cliquez sur "Gestionnaire des extensions":
 
-![addonmenu](/ressources/addonm.png?raw=true)
+![addonmenu](/ressources/addonsm.png?raw=true)
+
+Une fenêtre s'ouvre. Recherchez "Lattybrides" de l'atelier s'affichera dans la liste. Il ne vous reste plus qu'à le sélectionner et à cliquer sur le bouton "Installer" :
+
+![addonwindow](/ressources/addonswm.png?raw=true)
+![addoninstall](/ressources/installm.png?raw=true)
+
+Les mises à jour s'effectuerons également via cette fenêtre. Vous pouvez maintenant fermer cette fenêtre. FreeCAD vous demandera de redémarrer l'application afin de recharger tous les ateliers fraîchements installés.
+
+Une fois redémarré vous pouvez accéder à l'atelier de cette façon :
+
+![launch](/ressources/launch.png?raw=true)
 
 _____________________________________________________________________________
 
