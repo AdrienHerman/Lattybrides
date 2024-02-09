@@ -1,11 +1,5 @@
 """
-Affichage du fichier de configuration.
-HERMAN Adrien
-06/02/2024
-"""
-"""
-Exécution du script de génération de structure
-via l'interface graphique.
+Réinitialisation du fichier de configuration.
 HERMAN Adrien
 06/02/2024
 """

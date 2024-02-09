@@ -44,7 +44,7 @@ rho:1.24:
 #:
 #: /// GÉNÉRATION DE STRUCTURES \\\
 #: Structure à base de losanges : No1
-gen_losange_basic:False:
+gen_losange_basic:True:
 gen_losange_grad:False:
 #:
 #: Structure à base d'hexagones et de triangles alignés : No2
@@ -61,7 +61,7 @@ gen_tri_2D_grad:False:
 #:
 #: Structure à base de cosinus : No5
 gen_cos_2D_basic:False:
-gen_cos_2D_grad:True:
+gen_cos_2D_grad:False:
 #:--------------------------------------
 #:
 #:-----------------------------------------
@@ -216,16 +216,12 @@ extrude:True:
 #:
 #: ** Exporte la pièce au format stl
 #: ** True = Exporter au format stl / False = Ne pas exporter
-#: ** Si cette option est à True, export_path et export_name
-#: ** doivent-être renseignés
 #: ** ATTENTION : Si export = True, extrude doit être activé (extrude = True)
 export:True:
-#: ** export_name ne doit contenir uniquement le nom de l'exportation et sans extention
-export_name:structure:
-#: ** export_path ne doit contenir que le chemin à partir d'où le logiciel est avec le
-#: ** dossier où vous voulez exporter les structures. ATTENTION à ne pas oublier "/"
-#: ** à la fin du nom du dossier
-export_path:STRUCTURES_GENEREES/:
+#:
+#: ** Enregistrement du fichier FreeCAD
+#: ** True = Demander à enregistrer le fichier FreeCAD (*.FcStd)
+enregistrement_fichier:True:
 #:
 #: ** Affiche l'(les)esquisse(s) de départ après l'extrusion
 #: ** True = Laisser l'(les) essquisse(s) affichées / False = Cacher la/les essquisse(s)
@@ -236,9 +232,9 @@ sketch_visible:False:
 #: --- PARTIE DEBOGAGE ---
 #: ** Trace les lignes de construction
 #: ** True = Oui / False = Non
-semi_debug:True:
+semi_debug:False:
 #: ** Affiche les actions dans le terminal et dans le fichier de débogage
-debug:True:
+debug:False:
 #: ** Génère le fichier de déboggage dans le dossier "debug_current_folder"
 debug_current_folder:log/:
 #:-------------------------

@@ -26,11 +26,13 @@ class Lattybrides(Workbench):
 
 	def Initialize(self):
 		# Modules du Logiciel
-		import EXEC, ReinitConfig, EditConfig
+		import EXEC, ReinitConfig, EditConfig, OpenConfig, CopyConfig
 
 		self.list = [	"EXEC",
 						"EditConfig",
-						"ReinitConfig"]
+						"ReinitConfig",
+						"OpenConfig",
+						"CopyConfig"]
 		self.appendToolbar("Exécuter la Génération de Structure", self.list)
 		self.appendMenu("Lattybrides", self.list)
 

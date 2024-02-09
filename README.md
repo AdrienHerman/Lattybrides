@@ -1,25 +1,43 @@
-<table><tbody><td><img src="https://github.com/AdrienHerman/PLP/blob/main/FreeCAD016-logo.svg" width="128" height="128" /></td><td><img src="https://github.com/AdrienHerman/PLP/blob/main/image.png" width="128" /></td></tbody></table>
+![Lattybrides logo](/icons/softicon.png?raw=true)
 
-# PLP23INT16 : Étude de la capacité d'absorption de diverses structures lattices hybrides à gradients de réseau
-
-## Branche "last_stable"
-Ceci est la branche "last_stable" à utiliser pour générer des structures ou pour analyser les données expérimentales.
-Pour bénéficier des dernières avancées, veuillez aller à la branche "dev" mais elle peut être instable.
-
-# Partie Génération des Structures
+# Lattybrides
+Création de structures Lattices Hybrides à Gradients de réseau. Projet réalisé dans le cadre du projet de fin d'étude PLP23INT16 à l'INSA Hauts-de-France.
 
 ## Dépendances
-Les modules python nécessaires au bon fonctionnement du code de génération des structures sont les suivantes :
+Les modules python nécessaires au bon fonctionnement du code de génération des structures sont les suivants :
 ```
- - os (Installé de base)
- - sys (Installé de base)
- - math (Installé de base)
  - datetime
  - matplotlib
  - PySide
 ```
-L'exécution du code de génération des structures doit obligatoirement se faire via FreeCAD (voir partie utilisation).
-**_ATTENTION : La dernière version de FreeCAD Testée avec ce code est la version 21.1 !_**  
+**_ATTENTION : L'atelier n'a été testé qu'à partir de la version 0.19 et jusqu'à la version 0.21.2, d'autres versions de FreeCAD sont suceptibles de faire disfonctionner l'atelier !_**
+
+## Installation
+L'installation de l'atelier peut se faire manuellement en copiant le code python dans le dossier Mod de FreeCAD (voir ici : [installation manuelle](https://wiki.freecad.org/Installing_more_workbenches/fr)) ou en utilisant le gestionnaire des extensions (voir ici : [installation via freecad](https://wiki.freecad.org/Std_AddonMgr/fr)).
+
+### Installation via le gestionnaire des extensions de FreeCAD
+L'atelier n'étant pas répertorié dans les dépôts de FreeCAD, il vous faudra l'ajouter manuellement.
+Pour ce faire, ouvrez la fenêtre de "Préférences" de FreeCAD (Menu Édition -> Préférences) :
+![menu preferences](/ressources/settings.png?raw=true)
+
+Ouvrez ensuite l'onglet "Gestionnaire des extensions" et cliquez sur le bouton "+" :
+![fenetre preference](/ressources/settings_window.png?raw=true)
+
+Un fenêtre s'ouvre :
+![fenetre repo](/ressources/repo.png?raw=true)
+Il vous suffit ensuite de copier coller les informations suivantes :
+```
+URL du dépôt : https://github.com/AdrienHerman/Lattybrides
+```
+```
+Branche : main
+```
+Cliquez sur "OK" et une nouvelle fois sur "OK" dans la fenêtre des préférences de FreeCAD.
+
+Allez ensuite dans le menu "Outils" et cliquez sur "Gestionnaire des extensions":
+![addon menu](/ressources/addon_menu.png?raw=true)
+
+_____________________________________________________________________________
 
 ## Configuration
 

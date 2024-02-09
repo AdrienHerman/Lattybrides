@@ -69,16 +69,16 @@ def plot_math_func(	nbpts=10,
 	echantillonnage = np.ndarray.tolist(np.arange(xy_0, xy_fin + (xy_fin - xy_0) / nbpts, (xy_fin - xy_0) / nbpts))
 	if file_debug != None and debug:
 		for e in echantillonnage:
-			wdebug("{0},".format(e), file_debug)
-		wdebug("]\n\n", file_debug)
+			if file_debug != None and debug:	wdebug("{0},".format(e), file_debug)
+		if file_debug != None and debug:	wdebug("]\n\n", file_debug)
 
 	if file_debug != None and debug:	wdebug("Calcul du vecteur de la fonction mathématique = [", file_debug)
 	if y:	pts_fct = [func(e, *args) + current_pos[1] for e in echantillonnage]
 	elif x:	pts_fct = [func(e, *args) + current_pos[0] for e in echantillonnage]
 	if file_debug != None and debug:
 		for pts in pts_fct:
-			wdebug("{0},".format(pts), file_debug)
-		wdebug("]\n\n", file_debug)
+			if file_debug != None and debug:	wdebug("{0},".format(pts), file_debug)
+		if file_debug != None and debug:	wdebug("]\n\n", file_debug)
 
 	if file_debug != None and debug:	wdebug("Création des objets points FreeCAD.\n", file_debug)
 	if y:

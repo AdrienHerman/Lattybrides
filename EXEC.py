@@ -8,7 +8,7 @@ HERMAN Adrien
 # Modules de Python
 from FreeCAD import Gui
 import FreeCAD as App
-from PySide import QtGui
+from PySide.QtGui import QMessageBox, QFileDialog, QPlainTextEdit, QTextEdit
 import os, time, sys
 
 # Détection du dossier de travail
@@ -52,7 +52,35 @@ class EXEC_Class:
 		"ToolTip": "Générer la structure lattice correspondant au fichier de configuration.",
 		}
 
+	def end_prog(self, wdebug=None, temps_debut=0, file_debug=None, debug=True):
+		# Fin du programme
+		wdebug("\n\n---------------------\n", file_debug)
+		wdebug("--- Fin Programme ---\n", file_debug)
+		wdebug("---------------------\n", file_debug)
+
+		# Calcul de la durée d'exécution
+		temps_fin = time.time()
+		duree_exec = temps_fin - temps_debut
+		if duree_exec >= 60:	# Conversion en minute si nécessaire
+			duree_exec_min = int(duree_exec / 60)
+			duree_exec_sec = round(duree_exec % 60, 0)
+			wdebug("Temps d'exécution: {0}min {1}s\n".format(duree_exec_min, duree_exec_sec), file_debug)
+		else:
+			wdebug("Temps d'exécution: {0}s\n".format(round(duree_exec, 0)), file_debug)
+
+		# Fermeture du fichier de déboggage
+		if file_debug != None and debug:
+			file_debug.close()
+
 	def Activated(self):
+		# Message de sauvegarde du fichier de configuration
+		msgBox = QMessageBox()
+		msgBox.setText("Avez-vous sauvegardé le fichier de configuration (Ctrl+S) ?")
+		msgBox.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+		ret = msgBox.exec_()
+		if ret == QMessageBox.No:
+			return
+
 		# Lecture des parmaètres du programme
 		[	lecture_param_ok,
 			gen_losange_basic,
@@ -102,8 +130,7 @@ class EXEC_Class:
 			nbpts_cos_grad,
 			extrude,
 			export,
-			export_name,
-			export_path,
+			enregistrement_fichier,
 			sketch_visible,
 			semi_debug,
 			debug,
@@ -111,16 +138,17 @@ class EXEC_Class:
 			log] = lecture_param(softpath + "/config.py")
 
 		# Création du fichier de débogage & écriture des log de la fonction lecture_param
-		if not debug_current_folder:	debug_current_folder = "log/"
-		file_debug = create_file_debug(softpath + debug_current_folder)
-		wdebug(log, file_debug)
+		if debug:
+			if not debug_current_folder:	debug_current_folder = "/log/"
+			file_debug = create_file_debug(softpath + "/" + debug_current_folder)
+			wdebug(log, file_debug)
 
 		if lecture_param_ok:
 			# Effacer les consoles Python et la Vue Rapport
 			mw = Gui.getMainWindow()
-			c = mw.findChild(QtGui.QPlainTextEdit, "Python console")
+			c = mw.findChild(QPlainTextEdit, "Python console")
 			c.clear()
-			r = mw.findChild(QtGui.QTextEdit, "Report view")
+			r = mw.findChild(QTextEdit, "Report view")
 			r.clear()
 
 			# Initialisation des variables
@@ -897,26 +925,22 @@ class EXEC_Class:
 				affichage_calculs_masse(masse, objectif_masse, tolerance, pas_final, ep_finale, porosite)
 
 			# Exportation en stl de la pièce
-			export_body(doc, nom_body, export, export_path, export_name, debug, wdebug, file_debug)
+			if extrude and export:
+				# Aller chercher le chemin et le nom de la sauvegarde
+				export_path = QFileDialog.getSaveFileName(parent=None, caption="Savegarder le fichier 3D de la structure", dir="", filter="Fichiers STL (*.stl)")
+				
+				# Si le chemin de sauvegarde du fichier est non vide, alors le sauvegarder
+				if export_path[0] != "":
+					export_body(doc, nom_body, export_path[0], debug, wdebug, file_debug)
 
-			# Fin du programme
-			wdebug("\n\n---------------------\n", file_debug)
-			wdebug("--- Fin Programme ---\n", file_debug)
-			wdebug("---------------------\n", file_debug)
+			elif not extrude and export and debug:
+				wdebug("ERREUR : IMPOSSIBLE D'EXPORTER UN MODÈLE 3D D'UN SOLIDE NON EXTRUDÉ !")
 
-			# Calcul de la durée d'exécution
-			temps_fin = time.time()
-			duree_exec = temps_fin - temps_debut
-			if duree_exec >= 60:	# Conversion en minute si nécessaire
-				duree_exec_min = int(duree_exec / 60)
-				duree_exec_sec = round(duree_exec % 60, 0)
-				wdebug("Temps d'exécution: {0}min {1}s\n".format(duree_exec_min, duree_exec_sec), file_debug)
-			else:
-				wdebug("Temps d'exécution: {0}s\n".format(round(duree_exec, 0)), file_debug)
+			# Enregistrement du projet FreeCAD
+			if enregistrement_fichier:
+				Gui.SendMsgToActiveView("Save")
 
-			# Fermeture du fichier de déboggage
-			if file_debug != None and debug:
-				file_debug.close()
+			self.end_prog(wdebug=wdebug, temps_debut=temps_debut, file_debug=file_debug, debug=debug)
 
 		else:
 			print("La lecture des paramètres ne s'est pas terminée correctement !")

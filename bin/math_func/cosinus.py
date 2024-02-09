@@ -235,7 +235,7 @@ def gen_cosinus(	ep=0.4,
 																											point_delimitation[j % 4].y,
 																											point_delimitation[j % 4].z),
 																											file_debug)
-				wdebug("\n", file_debug)
+					wdebug("\n", file_debug)
 
 		if list_type:
 			phi_ = phi[i]

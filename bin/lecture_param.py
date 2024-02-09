@@ -11,7 +11,6 @@ def lecture_param(path_config="config.txt", debug=True):
 	-----------
 	Variables :
 		path_config -> Chemin vers le fichier de configuration
-		wdebug -> Fonction d'écriture des informations de débogage dans le terminal et dans le fichier log
 		file_debug -> Fichier de déboggage (ouvert)
 		debug -> Afficher les actions dans le terminal et dans le fichier de déboggage
 	-----------
@@ -28,7 +27,7 @@ def lecture_param(path_config="config.txt", debug=True):
 
 	# Variable contenant les log
 	log = ""
-	return_nok = [False for i in range(54)]	# Liste à retourner si la lecture des parmaètres ne s'est pas terminée correctement
+	return_nok = [False for i in range(53)]	# Liste à retourner si la lecture des parmaètres ne s'est pas terminée correctement
 
 	if path != "":
 		if not (path_config.split("/")[-1] in os.listdir(path)):
@@ -108,9 +107,8 @@ def lecture_param(path_config="config.txt", debug=True):
 	nbpts_cos_grad = None
 	#	Partie exploitation du modèle 3D
 	extrude = None 
-	export = None 
-	export_name = None 
-	export_path = None 
+	export = None
+	enregistrement_fichier = None
 	sketch_visible = None
 	# 	Partie Débogage
 	semi_debug = None 
@@ -578,10 +576,12 @@ def lecture_param(path_config="config.txt", debug=True):
 			else:
 				if debug:
 					log += "lecture_param\nCommande inconnue pour export\n"
-		elif lignes[i][0] == "export_name":
-			export_name = str(lignes[i][1])
-		elif lignes[i][0] == "export_path":
-			export_path = str(lignes[i][1])
+		elif lignes[i][0] == "enregistrement_fichier":
+			if lignes[i][1] == "False":		enregistrement_fichier = False
+			elif lignes[i][1] == "True":	enregistrement_fichier = True
+			else:
+				if debug:
+					log += "lecture_param\nCommande inconnue pour enregistrement_fichier\n"
 		elif lignes[i][0] == "sketch_visible":
 			if lignes[i][1] == "False":		sketch_visible = False
 			elif lignes[i][1] == "True":	sketch_visible = True
@@ -654,8 +654,7 @@ def lecture_param(path_config="config.txt", debug=True):
 					nbpts_cos_grad,
 					extrude,
 					export,
-					export_name,
-					export_path,
+					enregistrement_fichier,
 					sketch_visible,
 					semi_debug,
 					debug,
@@ -950,14 +949,9 @@ def lecture_param(path_config="config.txt", debug=True):
 			log += "lecture_param\nexport n'est pas définie !\n"
 		return_nok.append(log)
 		return return_nok
-	elif export_name == None:
+	elif enregistrement_fichier == None:
 		if debug:
-			log += "lecture_param\nexport_name n'est pas définie !\n"
-		return_nok.append(log)
-		return return_nok
-	elif export_path == None:
-		if debug:
-			log += "lecture_param\nexport_path n'est pas définie !\n"
+			log += "lecture_param\nenregistrement_fichier n'est pas définie !\n"
 		return_nok.append(log)
 		return return_nok
 	elif sketch_visible == None:

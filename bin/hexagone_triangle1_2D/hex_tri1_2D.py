@@ -109,7 +109,7 @@ def gen_hex_tri1_2D_aligne(	ep=0.4,
 
 	# Condition à respecter pour pouvoir générer le motif
 	if math.cos(alpha) * cote >= lx / 2:
-		wdebug("gen_hex_tri1_2D_aligne : Il y a trop de motifs en x !\n     nb_hex_x={0}\n".format(nb_hex_x), file_debug)
+		if file_debug != None and debug:	wdebug("gen_hex_tri1_2D_aligne : Il y a trop de motifs en x !\n     nb_hex_x={0}\n".format(nb_hex_x), file_debug)
 		return
 
 	# Création d'une nouvelle esquisse et de la pièce

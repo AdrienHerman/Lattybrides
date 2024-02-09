@@ -1,2 +1,2 @@
 workbenches=Part,Sketcher
-pylibs=math,os,sys,time,matplotlib,PySide
+pylibs=math,os,sys,time,datetime,matplotlib,PySide
