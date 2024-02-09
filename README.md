@@ -19,7 +19,7 @@ L'installation de l'atelier peut se faire manuellement en copiant le code python
 L'atelier n'étant pas répertorié dans les dépôts de FreeCAD, il vous faudra l'ajouter manuellement.
 Pour ce faire, ouvrez la fenêtre de "Préférences" de FreeCAD (Menu Édition -> Préférences) :
 
-![menu preferences](/ressources/settings.png?raw=true)
+![menu preferences](/ressources/settings.png?raw=true|width=100)
 
 Ouvrez ensuite l'onglet "Gestionnaire des extensions" et cliquez sur le bouton "+" :
 
