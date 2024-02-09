@@ -5,7 +5,6 @@ HERMAN Adrien
 """
 
 # Modules de Python
-from FreeCAD import Gui
 import os
 
 # Détection du dossier de travail
