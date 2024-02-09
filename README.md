@@ -19,7 +19,7 @@ L'installation de l'atelier peut se faire manuellement en copiant le code python
 L'atelier n'étant pas répertorié dans les dépôts de FreeCAD, il vous faudra l'ajouter manuellement.
 Pour ce faire, ouvrez la fenêtre de "Préférences" de FreeCAD (Menu Édition -> Préférences) :
 
-<img src="https://github.com/AdrienHerman/Lattybrides/blob/main/ressources/settings.png" width="150">
+<img src="https://github.com/AdrienHerman/Lattybrides/blob/main/ressources/settings.png" width="350">
 
 Ouvrez ensuite l'onglet "Gestionnaire des extensions" et cliquez sur le bouton "+" :
 
