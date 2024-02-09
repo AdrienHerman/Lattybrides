@@ -23,11 +23,11 @@ Pour ce faire, ouvrez la fenêtre de "Préférences" de FreeCAD (Menu Édition -
 
 Ouvrez ensuite l'onglet "Gestionnaire des extensions" et cliquez sur le bouton "+" :
 
-<img src="https://github.com/AdrienHerman/Lattybrides/blob/main/ressources/settingsw.png" width="350">
+<img src="https://github.com/AdrienHerman/Lattybrides/blob/main/ressources/settingsw.png" width="650">
 
 Un fenêtre s'ouvre :
 
-<img src="https://github.com/AdrienHerman/Lattybrides/blob/main/ressources/repo.png" width="650">
+<img src="https://github.com/AdrienHerman/Lattybrides/blob/main/ressources/repo.png" width="350">
 
 Il vous suffit ensuite de copier coller les informations suivantes :
 ```
