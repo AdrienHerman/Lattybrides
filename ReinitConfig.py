@@ -6,6 +6,7 @@ HERMAN Adrien
 
 # Modules de Python
 from FreeCAD import Gui
+from PySide.QtGui import QMessageBox
 import os
 
 # Détection du dossier de travail
@@ -28,6 +29,15 @@ class ReinitConfig_Class:
 		}
 
 	def Activated(self):
+		# Message de confirmation de réinitialisation du fichier de configuration
+		msgBox = QMessageBox()
+		msgBox.setText("Êtes-vous sûr de vouloir écraser le fichier de configuration ?")
+		msgBox.setInformativeText("Cette action remettra les valeurs par défaut dans le fichier config.py.")
+		msgBox.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+		ret = msgBox.exec_()
+		if ret == QMessageBox.No:
+			return
+
 		file_config = open(softpath + "/config.py", "w")
 		file_config_default = open(softpath + "/config_default.py", "r")
 

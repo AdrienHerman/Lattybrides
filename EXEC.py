@@ -138,6 +138,7 @@ class EXEC_Class:
 			log] = lecture_param(softpath + "/config.py")
 
 		# Création du fichier de débogage & écriture des log de la fonction lecture_param
+		file_debug = None
 		if debug:
 			if not debug_current_folder:	debug_current_folder = "/log/"
 			file_debug = create_file_debug(softpath + "/" + debug_current_folder)
@@ -940,7 +941,7 @@ class EXEC_Class:
 			if enregistrement_fichier:
 				Gui.SendMsgToActiveView("Save")
 
-			self.end_prog(wdebug=wdebug, temps_debut=temps_debut, file_debug=file_debug, debug=debug)
+			if debug and file_debug != None:	self.end_prog(wdebug=wdebug, temps_debut=temps_debut, file_debug=file_debug, debug=debug)
 
 		else:
 			print("La lecture des paramètres ne s'est pas terminée correctement !")
