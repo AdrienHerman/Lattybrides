@@ -2,7 +2,7 @@
 <!--To view this file, download free mind mapping software Freeplane from http://freeplane.sourceforge.net -->
 <node TEXT="Lattybrides" FOLDED="false" ID="ID_543591018" CREATED="1707649747436" MODIFIED="1707650191224" STYLE="oval">
 <font SIZE="18"/>
-<hook NAME="MapStyle" zoom="0.684">
+<hook NAME="MapStyle" zoom="0.514">
     <properties edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" fit_to_viewport="false"/>
 
 <map_styles>
@@ -63,7 +63,7 @@
 </stylenode>
 </map_styles>
 </hook>
-<hook NAME="AutomaticEdgeColor" COUNTER="16" RULE="ON_BRANCH_CREATION"/>
+<hook NAME="AutomaticEdgeColor" COUNTER="17" RULE="ON_BRANCH_CREATION"/>
 <node TEXT="~/InitGui.py : Fichier charg&#xe9; par FreeCAD au moment du d&#xe9;marrage de l&apos;interface graphique (Chargement de l&apos;Atelier)" POSITION="right" ID="ID_708433526" CREATED="1707649760862" MODIFIED="1707654461867">
 <edge COLOR="#ff0000"/>
 </node>
@@ -116,6 +116,9 @@
 <node TEXT="~/CopyConfig.py : Fichier ex&#xe9;cut&#xe9; lorsque le bouton de cr&#xe9;ation d&apos;une copie du fichier de configuration est enclench&#xe9;" POSITION="right" ID="ID_922838098" CREATED="1707649897179" MODIFIED="1707654474360">
 <edge COLOR="#00007c"/>
 </node>
+<node TEXT="~/OpenHelp.py : Fichier ex&#xe9;cut&#xe9; lorsque le bouton de d&apos;affichage de l&apos;aide de l&apos;atelier est enclench&#xe9;" POSITION="right" ID="ID_47138864" CREATED="1707657424640" MODIFIED="1707657464629">
+<edge COLOR="#7c0000"/>
+</node>
 <node TEXT="~/soft_path.py : Fichier permettant de r&#xe9;cup&#xe9;rer le chemin o&#xf9; les scripts python se trouvent" POSITION="right" ID="ID_16008342" CREATED="1707650858771" MODIFIED="1707654476666">
 <edge COLOR="#00ffff"/>
 </node>
@@ -140,7 +143,7 @@
 <node TEXT="~/log : Dossier contenant les logs d&apos;ex&#xe9;cution de l&apos;atelier" POSITION="right" ID="ID_1525052422" CREATED="1707650121740" MODIFIED="1707650144966">
 <edge COLOR="#00ff00"/>
 </node>
-<node TEXT="~/ressources : Dossier contenant les images lues par la fichier README.md" POSITION="right" ID="ID_1842132470" CREATED="1707650147916" MODIFIED="1707650171859">
+<node TEXT="~/ressources : Dossier contenant les images lues par la fichier README.md et l&apos;aide de l&apos;atelier au format HTML" POSITION="right" ID="ID_1842132470" CREATED="1707650147916" MODIFIED="1707657511861">
 <edge COLOR="#ff00ff"/>
 </node>
 </node>
