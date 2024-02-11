@@ -15,7 +15,7 @@ iconPath = os.path.join(softpath, "icons")
 
 class ReinitConfig_Class:
 	"""
-	Classe d'exécution du script de génération de la structure.
+	Classe d'exécution du script de réinitialisation de la configuration.
 	"""
 
 	def __init__(self):

@@ -15,7 +15,7 @@ iconPath = os.path.join(softpath, "icons")
 
 class OpenConfig_Class:
 	"""
-	Classe d'exécution du script de génération de la structure.
+	Classe d'exécution du script d'ouverture du fichier de configuration.
 	"""
 
 	def __init__(self):
