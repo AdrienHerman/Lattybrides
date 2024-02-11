@@ -5,9 +5,9 @@ HERMAN Adrien
 """
 
 # Modules de Python
-from FreeCAD import Gui
+from FreeCAD import Gui, WebGui
 from PySide.QtGui import QMessageBox
-import os, pyquark
+import os
 
 # Détection du dossier de travail
 softpath = os.path.dirname(__file__)
@@ -31,7 +31,7 @@ class OpenHelp_Class:
 
 	def Activated(self):
 		try:
-			pyquark.filestart(ressourcesPath + "/help.pdf")
+			WebGui.openBrowser("https://github.com/AdrienHerman/Lattybrides/blob/main/ressources/help.pdf")
 
 		except:
 			msgBox = QMessageBox()
