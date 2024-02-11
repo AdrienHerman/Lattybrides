@@ -31,7 +31,7 @@ class OpenHelp_Class:
 
 	def Activated(self):
 		try:
-			WebGui.openBrowser("https://github.com/AdrienHerman/Lattybrides/blob/main/ressources/Documentation_FreeCAD.html")
+			WebGui.openBrowser(ressourcesPath + "/Documentation_FreeCAD.html")
 
 		except:
 			msgBox = QMessageBox()
