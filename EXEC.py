@@ -94,7 +94,7 @@ class EXEC_Class:
 			gen_cos_2D_basic,
 			gen_cos_2D_grad,
 			generation_plateaux_extremitees,
-			[ep_plateau_dessous, ep_plateau_dessus],
+			ep_plateaux_extremitees,
 			ep,
 			dimlat_ep,
 			dimlat_x,
