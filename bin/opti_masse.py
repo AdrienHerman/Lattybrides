@@ -151,15 +151,24 @@ def opti_masse(	doc,
 
 	# Variation automatique du pas de correction de l'épaisseur
 	if pas > 0:
+		# Augmentation du pas de correction
 		if abs(masse[pas] - masse[pas - 1]) <= seuil_augmentation_correction:
 			correction_ep_par_pas *= (1 + pourcentage_modification_correction)
 			if file_debug != None and debug:
 				wdebug("    Augmentation du pas de correction : {0} mm\n".format(correction_ep_par_pas), file_debug)
 
-		if abs(masse[pas] - masse[pas - 1]) >= seuil_diminution_correction:
-			correction_ep_par_pas *= (1 - pourcentage_modification_correction)
-			if file_debug != None and debug:
-				wdebug("    Diminution du pas de correction : {0} mm\n".format(correction_ep_par_pas), file_debug)
+		# Diminution du pas de correction
+		if m[pas] > m[pas - 1]:		# Courbe ascendante
+			if m[pas - 1] < objectif_masse - tolerance and m[pas] > objectif_masse + tolerance:
+				correction_ep_par_pas *= (1 - pourcentage_modification_correction)
+				if file_debug != None and debug:
+					wdebug("    Diminution du pas de correction : {0} mm\n".format(correction_ep_par_pas), file_debug)
+
+		else:						# Courbe descendante
+			if m[pas - 1] > objectif_masse - tolerance and m[pas] < objectif_masse + tolerance:
+				correction_ep_par_pas *= (1 - pourcentage_modification_correction)
+				if file_debug != None and debug:
+					wdebug("    Diminution du pas de correction : {0} mm\n".format(correction_ep_par_pas), file_debug)
 
 	# Test des pas de calculs
 	if pas < nb_pas_max:
