@@ -158,14 +158,14 @@ def opti_masse(	doc,
 				wdebug("    Augmentation du pas de correction : {0} mm\n".format(correction_ep_par_pas), file_debug)
 
 		# Diminution du pas de correction
-		if m[pas] > m[pas - 1]:		# Courbe ascendante
-			if m[pas - 1] < objectif_masse - tolerance and m[pas] > objectif_masse + tolerance:
+		if masse[pas] > masse[pas - 1]:		# Courbe ascendante
+			if masse[pas - 1] < objectif_masse - tolerance and masse[pas] > objectif_masse + tolerance:
 				correction_ep_par_pas *= (1 - pourcentage_modification_correction)
 				if file_debug != None and debug:
 					wdebug("    Diminution du pas de correction : {0} mm\n".format(correction_ep_par_pas), file_debug)
 
 		else:						# Courbe descendante
-			if m[pas - 1] > objectif_masse - tolerance and m[pas] < objectif_masse + tolerance:
+			if masse[pas - 1] > objectif_masse - tolerance and masse[pas] < objectif_masse + tolerance:
 				correction_ep_par_pas *= (1 - pourcentage_modification_correction)
 				if file_debug != None and debug:
 					wdebug("    Diminution du pas de correction : {0} mm\n".format(correction_ep_par_pas), file_debug)
