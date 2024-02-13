@@ -35,7 +35,7 @@ correction_ep_par_pas:7e-3:
 #: ** Pourcentage de modification de la variable correction_ep_par_pas utilisé
 #: ** si la convergence est trop lente / rapide
 pourcentage_modification_correction_augmentation:0.05:
-pourcentage_modification_correction_diminution:0.15:
+pourcentage_modification_correction_diminution:0.3:
 #: ** Seuil à partir duquel correction_ep_par_pas est augmenté
 seuil_augmentation_correction:0.2:
 #: ** Masse volumique du matériau utilisé pour l'impression (en g/cm^3)
