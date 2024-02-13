@@ -20,7 +20,7 @@
 #: ** correction_ep_par_pas, pourcentage_modification_correction,
 #: ** seuil_augmentation_correction, seuil_diminution_correction, rho
 #: ** doivent-être renseignées
-optimisation_masse:False:
+optimisation_masse:True:
 #: ** Objectif de masse à atteindre avant l'arrêt des calculs (en g)
 objectif_masse:18:
 #: ** Tolérance sur l'objectif de masse
@@ -28,17 +28,16 @@ objectif_masse:18:
 tolerance:1e-1:
 #: ** Nombre d'itération maximale avant l'arrêt des calculs même si l'objectif
 #: ** de masse n'est pas atteint
-nb_pas_max:3:
+nb_pas_max:50:
 #: ** Valeur de correction de l'épaisseur des parois à chaque pas
 #: ** (augmentation ou diminution en mm)
 correction_ep_par_pas:7e-3:
 #: ** Pourcentage de modification de la variable correction_ep_par_pas utilisé
 #: ** si la convergence est trop lente / rapide
-pourcentage_modification_correction:0.05:
-#: ** Seuil à partir duquel correction_ep_par_pas est augmenté / diminuer
-#: METTRE FORMULE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+pourcentage_modification_correction_augmentation:0.05:
+pourcentage_modification_correction_diminution:0.15:
+#: ** Seuil à partir duquel correction_ep_par_pas est augmenté
 seuil_augmentation_correction:0.2:
-seuil_diminution_correction:0.2:
 #: ** Masse volumique du matériau utilisé pour l'impression (en g/cm^3)
 rho:1.24:
 #:
@@ -84,7 +83,7 @@ ep_plateau_dessus:0.4:
 #: /// PROPRIÉTÉS GÉOMÉTRIQUES COMMUNES \\\
 #: ** Choix de l'épaisseur des parois
 #: ** Entrer un nombre réel positif
-ep:0.6:
+ep:0.4:
 #:
 #: ** Choix de l'épaisseur d'extrusion du modèle
 #: ** Entrer un nombre réel positif
@@ -99,8 +98,8 @@ dimlat_y:40:
 #: /// GÉNÉRATION DE MOTIFS SANS GRADIENT \\\
 #: ** Choix du nombre de losange sur l'axe x et sur l'axe y
 #: ** Entrer un nombre entier
-nb_motif_x_sg:8:
-nb_motif_y_sg:4:
+nb_motif_x_sg:7:
+nb_motif_y_sg:10:
 #:
 #:
 #: /// GÉNÉRATION DE MOTIFS AVEC GRADIENT \\\

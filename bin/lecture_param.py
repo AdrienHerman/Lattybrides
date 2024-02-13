@@ -75,9 +75,9 @@ def lecture_param(path_config="config.txt", debug=True):
 	tolerance = None
 	nb_pas_max = None
 	correction_ep_par_pas = None
-	pourcentage_modification_correction = None
+	pourcentage_modification_correction_augmentation = None
+	pourcentage_modification_correction_diminution = None
 	seuil_augmentation_correction = None
-	seuil_diminution_correction = None
 	rho = None
 	# 	Géométries sans gradients
 	nb_motif_x_sg = None
@@ -326,13 +326,20 @@ def lecture_param(path_config="config.txt", debug=True):
 				if debug:
 					log += """	lecture_param\nLe type de données entrée dans correction_ep_par_pas n'est pas correct !
 									\n     correction_ep_par_pas={0}\n""".format(lignes[i][1])
-		elif lignes[i][0] == "pourcentage_modification_correction":
+		elif lignes[i][0] == "pourcentage_modification_correction_augmentation":
 			try:
-				pourcentage_modification_correction = float(lignes[i][1])
+				pourcentage_modification_correction_augmentation = float(lignes[i][1])
 			except:
 				if debug:
-					log += """	lecture_param\nLe type de données entrée dans pourcentage_modification_correction n'est pas correct !
-									\n     pourcentage_modification_correction={0}\n""".format(lignes[i][1])
+					log += """	lecture_param\nLe type de données entrée dans pourcentage_modification_correction_augmentation n'est pas correct !
+									\n     pourcentage_modification_correction_augmentation={0}\n""".format(lignes[i][1])
+		elif lignes[i][0] == "pourcentage_modification_correction_diminution":
+			try:
+				pourcentage_modification_correction_diminution = float(lignes[i][1])
+			except:
+				if debug:
+					log += """	lecture_param\nLe type de données entrée dans pourcentage_modification_correction_diminution n'est pas correct !
+									\n     pourcentage_modification_correction_diminution={0}\n""".format(lignes[i][1])
 		elif lignes[i][0] == "seuil_augmentation_correction":
 			try:
 				seuil_augmentation_correction = float(lignes[i][1])
@@ -340,13 +347,6 @@ def lecture_param(path_config="config.txt", debug=True):
 				if debug:
 					log += """	lecture_param\nLe type de données entrée dans seuil_augmentation_correction n'est pas correct !
 									\n     seuil_augmentation_correction={0}\n""".format(lignes[i][1])
-		elif lignes[i][0] == "seuil_diminution_correction":
-			try:
-				seuil_diminution_correction = float(lignes[i][1])
-			except:
-				if debug:
-					log += """	lecture_param\nLe type de données entrée dans seuil_diminution_correction n'est pas correct !
-									\n     seuil_diminution_correction={0}\n""".format(lignes[i][1])
 		elif lignes[i][0] == "rho":
 			try:
 				rho = float(lignes[i][1])
@@ -628,9 +628,9 @@ def lecture_param(path_config="config.txt", debug=True):
 					tolerance,
 					nb_pas_max,
 					correction_ep_par_pas,
-					pourcentage_modification_correction,
+					pourcentage_modification_correction_augmentation,
+					pourcentage_modification_correction_diminution,
 					seuil_augmentation_correction,
-					seuil_diminution_correction,
 					rho,
 					nb_motif_x_sg,
 					nb_motif_y_sg,
@@ -731,19 +731,19 @@ def lecture_param(path_config="config.txt", debug=True):
 			log += "lecture_param\ncorrection_ep_par_pas n'est pas définie !\n"
 		return_nok.append(log)
 		return return_nok
-	elif pourcentage_modification_correction == None:
+	elif pourcentage_modification_correction_augmentation == None:
 		if debug:
-			log += "lecture_param\npourcentage_modification_correction n'est pas définie !\n"
+			log += "lecture_param\npourcentage_modification_correction_diminution n'est pas définie !\n"
+		return_nok.append(log)
+		return return_nok
+	elif pourcentage_modification_correction_diminution == None:
+		if debug:
+			log += "lecture_param\npourcentage_modification_correction_diminution n'est pas définie !\n"
 		return_nok.append(log)
 		return return_nok
 	elif seuil_augmentation_correction == None:
 		if debug:
 			log += "lecture_param\nseuil_augmentation_correction n'est pas définie !\n"
-		return_nok.append(log)
-		return return_nok
-	elif seuil_diminution_correction == None:
-		if debug:
-			log += "lecture_param\nseuil_diminution_correction n'est pas définie !\n"
 		return_nok.append(log)
 		return return_nok
 	elif rho == None:

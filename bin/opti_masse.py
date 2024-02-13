@@ -87,9 +87,9 @@ def opti_masse(	doc,
 				ep=0.1,
 				pas=0,
 				correction_ep_par_pas=0.01,
-				pourcentage_modification_correction=0.15,
+				pourcentage_modification_correction_augmentation=0.05,
+				pourcentage_modification_correction_diminution=0.15,
 				seuil_augmentation_correction=0.05,
-				seuil_diminution_correction=0.5,
 				objectif_masse=2.8,
 				rho=1.24,
 				volume_max=1,
@@ -119,8 +119,8 @@ def opti_masse(	doc,
 		ep -> Épaisseur de la paroi de la structure lattice
 		pas -> Pas de calcul
 		correction_ep_par_pas -> Pas de correction en épaisseur à chaque étape
-		pourcentage_modification_correction -> Pourcentage de modification de la variable correction_ep_par_pas
-		seuil_augmentation_correction / seuil_diminution_correction -> Seuils à dépasser pour augmenter / diminuer la variable correction_ep_par_pas
+		pourcentage_modification_correction_augmentation/diminution -> Pourcentage de modification de la variable correction_ep_par_pas
+		seuil_augmentation_correction -> Seuil à dépasser pour augmenter la variable correction_ep_par_pas
 		objectif_masse -> Masse cible en g
 		rho -> Masse volumique du matériau utilisé en g/cm^3
 		volume_max -> Volume d'encombrement de la structure (utilisé pour le calcul de la porosité)
@@ -153,20 +153,20 @@ def opti_masse(	doc,
 	if pas > 0:
 		# Augmentation du pas de correction
 		if abs(masse[pas] - masse[pas - 1]) <= seuil_augmentation_correction:
-			correction_ep_par_pas *= (1 + pourcentage_modification_correction)
+			correction_ep_par_pas *= (1 + pourcentage_modification_correction_augmentation)
 			if file_debug != None and debug:
 				wdebug("    Augmentation du pas de correction : {0} mm\n".format(correction_ep_par_pas), file_debug)
 
 		# Diminution du pas de correction
 		if masse[pas] > masse[pas - 1]:		# Courbe ascendante
 			if masse[pas - 1] < objectif_masse - tolerance and masse[pas] > objectif_masse + tolerance:
-				correction_ep_par_pas *= (1 - pourcentage_modification_correction)
+				correction_ep_par_pas *= (1 - pourcentage_modification_correction_diminution)
 				if file_debug != None and debug:
 					wdebug("    Diminution du pas de correction : {0} mm\n".format(correction_ep_par_pas), file_debug)
 
 		else:						# Courbe descendante
 			if masse[pas - 1] > objectif_masse - tolerance and masse[pas] < objectif_masse + tolerance:
-				correction_ep_par_pas *= (1 - pourcentage_modification_correction)
+				correction_ep_par_pas *= (1 - pourcentage_modification_correction_diminution)
 				if file_debug != None and debug:
 					wdebug("    Diminution du pas de correction : {0} mm\n".format(correction_ep_par_pas), file_debug)
 
