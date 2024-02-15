@@ -944,7 +944,7 @@ class EXEC_Class:
 			if debug and file_debug != None:	self.end_prog(wdebug=wdebug, temps_debut=temps_debut, file_debug=file_debug, debug=debug)
 
 		else:
-			print("La lecture des paramètres ne s'est pas terminée correctement !")
+			print("La lecture des paramètres ne s'est pas terminée correctement !\n" + log)
 
 		return True
 

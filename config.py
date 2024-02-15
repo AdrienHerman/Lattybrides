@@ -20,7 +20,7 @@
 #: ** correction_ep_par_pas, pourcentage_modification_correction,
 #: ** seuil_augmentation_correction, seuil_diminution_correction, rho
 #: ** doivent-être renseignées
-optimisation_masse:True:
+optimisation_masse:False:
 #: ** Objectif de masse à atteindre avant l'arrêt des calculs (en g)
 objectif_masse:18:
 #: ** Tolérance sur l'objectif de masse
@@ -43,8 +43,8 @@ rho:1.24:
 #:
 #: /// GÉNÉRATION DE STRUCTURES \\\
 #: Structure à base de losanges : No1
-gen_losange_basic:True:
-gen_losange_grad:False:
+gen_losange_basic:False:
+gen_losange_grad:True:
 #:
 #: Structure à base d'hexagones et de triangles alignés : No2
 gen_hex_tri1_2D_aligne_basic:False:
@@ -120,17 +120,17 @@ nb_x_par_couche:5,5:
 #: ** les épaisseur de chaque couches
 dimlat_par_couche_manuel:False:
 #: ** ATTENTION : Il doit il y avoir le même nombre de valeur que nb_y_par_couche
-dimlat_par_couche:13.3,17.7,0,0:
+dimlat_par_couche:13.3,17.7:
 #:
 #: ** Choix de l'épaisseur des parois de chaque couche
 #: ** ep_par_couche est en pourcentage de l'épaisseur ep définie ci-dessus
 #: ** ATTENTION : Il doit il y avoir le même nombre de valeur que nb_y_par_couche
-ep_par_couche:1.1,1.0,0.9,0.8:
+ep_par_couche:1.1,0.8:
 #:
 #: ** Choix de l'épaisseur des plateaux liants les différentes couches en (mm)
 #: ** Laisser la valeur à 0 si le plateau ne doit pas être créé
 #: ** ATTENTION : Il doit il y avoir une valeur de moins que nb_y_par_couche
-ep_plateaux:0.3,0.3,0.3:
+ep_plateaux:0.3:
 #:
 #: /// GÉNÉRATION DE LA STRUCTURE HEXAGONES + TRIANGLES1 2D ALIGNÉS OU NON \\\
 #: Radians
@@ -233,7 +233,7 @@ sketch_visible:False:
 #: ** True = Oui / False = Non
 semi_debug:False:
 #: ** Affiche les actions dans le terminal et dans le fichier de débogage
-debug:False:
+debug:True:
 #: ** Génère le fichier de déboggage dans le dossier "debug_current_folder"
 debug_current_folder:log/:
 #:-------------------------

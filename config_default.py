@@ -34,10 +34,11 @@ nb_pas_max:3:
 correction_ep_par_pas:7e-3:
 #: ** Pourcentage de modification de la variable correction_ep_par_pas utilisé
 #: ** si la convergence est trop lente / rapide
-pourcentage_modification_correction_augmentation:0.05:
-pourcentage_modification_correction_diminution:0.3:
-#: ** Seuil à partir duquel correction_ep_par_pas est augmenté
+pourcentage_modification_correction:0.05:
+#: ** Seuil à partir duquel correction_ep_par_pas est augmenté / diminuer
+#: METTRE FORMULE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 seuil_augmentation_correction:0.2:
+seuil_diminution_correction:0.2:
 #: ** Masse volumique du matériau utilisé pour l'impression (en g/cm^3)
 rho:1.24:
 #:
@@ -233,7 +234,7 @@ sketch_visible:False:
 #: ** True = Oui / False = Non
 semi_debug:False:
 #: ** Affiche les actions dans le terminal et dans le fichier de débogage
-debug:False:
+debug:True:
 #: ** Génère le fichier de déboggage dans le dossier "debug_current_folder"
 debug_current_folder:log/:
 #:-------------------------

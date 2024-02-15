@@ -7,7 +7,7 @@ HERMAN Adrien
 def wdebug(string_debug, file_debug):
 	# Gestion du debuggage du code
 	print(string_debug, end="")
-	file_debug.write(string_debug)
+	if file_debug != None:	file_debug.write(string_debug)
 
 def create_file_debug(debug_current_folder=True, debug_folder=""):
 	# Importation des modules externes
@@ -21,7 +21,11 @@ def create_file_debug(debug_current_folder=True, debug_folder=""):
 		debug_folder = os.path.join(os.path.dirname(__file__), "log")
 
 	nom_file_debug = debug_folder + dt_string + ".log"
-	file_debug = open(nom_file_debug, "a")
+	try:
+		file_debug = open(nom_file_debug, "a")
+	except:
+		print("ERREUR : Impossible de créer le fichier de déboggage !")
+		file_debug = None
 
 	wdebug("-----------------------\n", file_debug)
 	wdebug("--- Début Programme ---\n", file_debug)
